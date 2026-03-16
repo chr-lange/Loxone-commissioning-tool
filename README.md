@@ -22,62 +22,7 @@ Connect to any Miniserver, test every physical input and output, and export a si
 
 ---
 
-## Screenshots
 
-> Add screenshots of the Connect tab, Test I/O tab, and a sample PDF here.
-
----
-
-## Requirements (running from source)
-
-| Package | Purpose |
-|---------|---------|
-| Python 3.9+ | Runtime |
-| `requests` | Miniserver HTTP API |
-| `reportlab` | PDF generation |
-| `Pillow` | App icon (optional) |
-
-```
-py -m pip install requests reportlab pillow
-```
-
-Tkinter is included with the standard Python Windows installer.
-
----
-
-## Running from source
-
-```bash
-py loxone_checklist_gui.py
-```
-
-Both files must be in the same folder:
-
-```
-loxone_checklist_gui.py   ← launch this
-loxone_checklist.py       ← core library (imported automatically)
-```
-
----
-
-## Building the Windows EXE
-
-1. Double-click **`build_exe.bat`**
-2. Wait ~1-2 minutes
-3. Find the EXE at `dist\LoxoneCommissioning.exe`
-
-The batch script installs PyInstaller and all dependencies automatically.
-
-```
-build_exe.bat             ← double-click to build
-LoxoneCommissioning.spec  ← PyInstaller spec (used by the batch file)
-dist\
-  LoxoneCommissioning.exe ← standalone output
-```
-
-> The EXE requires no Python installation on the target machine.
-
----
 
 ## Quick start
 
@@ -86,20 +31,6 @@ dist\
 3. **Test I/O tab** → select any item in the tree to trigger outputs or read input values
 4. Mark each item **OK**, **Not OK**, or **Skip** — the list advances automatically
 5. **Report tab** → filter if needed → click **Generate PDF**
-
----
-
-## File overview
-
-| File | Description |
-|------|-------------|
-| `loxone_checklist_gui.py` | Desktop GUI (Tkinter, v2.2) |
-| `loxone_checklist.py` | Core library — API, parser, PDF generator |
-| `loxone_webapp.py` | Alternative web-based UI (Flask) |
-| `build_exe.bat` | One-click EXE builder |
-| `LoxoneCommissioning.spec` | PyInstaller spec file |
-| `make_icon.py` | Generates the app icon (`loxone_icon.ico`) |
-| `loxone_tool_config.json` | Saved settings (auto-created on first run) |
 
 ---
 
